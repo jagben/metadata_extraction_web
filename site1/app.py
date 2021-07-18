@@ -1,9 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/predict', methods=["GET", "POST"])
+def predict():
+    # Not yet implement
+    clicked=None
+    if request.method == "POST":
+        clicked = request.json['file']
     return render_template('index.html')
 
 @app.route('/uploadpdf', methods=["GET", "POST"])
