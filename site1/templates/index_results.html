@@ -25,11 +25,11 @@
 </head>
 <body>
 
+
 <div class="container">
   <div class="bs-example">
     <h3>Multimodal Approach for Metadata Extraction from German Scientific Publications</h3>
   </div>
-
 
   <hr>  
     <div class="file-upload-div">
@@ -55,7 +55,7 @@
   <div class="row">
     <div class="col-sm-4">
         <div class="image">
-             <img src="{{ url_for('static',filename='paper.jpg') }}" alt="paper preview"> 
+             <img src="{{extracted["preview"]}}" alt="paper preview"> 
         </div>
     </div>
     <div class="col-sm-8">
@@ -65,55 +65,55 @@
     	    <div class="form-group row">
             		<label for="author" class="col-sm-2 col-form-label">Author</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="author" value="" readonly>
+            		    <input type="text" class="form-control" id="author" value="{{extracted["author"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="title" class="col-sm-2 col-form-label">Title</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="title" value="" readonly>
+            		    <input type="text" class="form-control" id="title" value="{{extracted["title"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="affiliation" class="col-sm-2 col-form-label">Affiliation</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="affiliation" value="" readonly>
+            		    <input type="text" class="form-control" id="affiliation" value="{{extracted["affiliation"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="date" class="col-sm-2 col-form-label">Date</label>
                 	<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="date" value="" readonly>
+            		    <input type="text" class="form-control" id="date" value="{{extracted["date"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="journal" class="col-sm-2 col-form-label">Journal</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="journal" value="" readonly>
+            		    <input type="text" class="form-control" id="journal" value="{{extracted["journal"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="address" class="col-sm-2 col-form-label">Address</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="address" value="" readonly>
+            		    <input type="text" class="form-control" id="address" value="{{extracted["address"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="Abstract" class="col-sm-2 col-form-label">Abstract</label>
     			<div class="col-sm-10">
-            		    <textarea class="form-control" id="abstract" rows="3" readonly></textarea>
+            		    <textarea class="form-control" id="abstract" rows="3" readonly>{{extracted["abstract"]}}</textarea>
             		</div> 
     	    </div>
         	    <div class="form-group row">
             		<label for="doi" class="col-sm-2 col-form-label">DOI</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="doi" value="" readonly>
+            		    <input type="text" class="form-control" id="doi" value="{{extracted["doi"]}}" readonly>
             		</div>
     	    </div>
     	    <div class="form-group row">
             		<label for="email" class="col-sm-2 col-form-label">E-mail</label>
             		<div class="col-sm-10">
-            		    <input type="text" class="form-control" id="email" value="" readonly>
+            		    <input type="text" class="form-control" id="email" value="{{extracted["email"]}}" readonly>
             		</div>
             	</div>
     	</form>    

@@ -1,10 +1,6 @@
-/* Use to test if css is working
-body {   
-    background-color: blue;  
-  }  */
-
 .bs-example{
-    margin: 20px;
+	margin: 20px;
+	margin-left: 0;
 }
 .demo-content{
     padding: 15px;
@@ -20,4 +16,13 @@ body {
     background: #dbdfe5;
     margin-bottom: 10px;
 }
-
+.extractBtn{
+    margin-left: 30px;
+}
+.file-upload-div{
+    margin: auto;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
