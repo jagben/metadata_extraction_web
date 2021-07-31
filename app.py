@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 from pdf2image import convert_from_path, convert_from_bytes
+from pubmex.pubmexinference import PubMexInference
 
 
 UPLOAD_FOLDER = 'uploads'
@@ -10,6 +11,13 @@ ALLOWED_EXTENSIONS = {'pdf', 'PDF'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config["SECRET_KEY"] = 'TPmi4aLWRbyVq8zu9v82dWYW1'
+
+# Initialize pubmex
+pubmex = PubMexInference(
+    model_dump='pubmex/vision_model/model_final.pth', 
+    config_file='pubmex/configs/train_config.yaml',
+    use_cuda=False,
+    )
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -58,16 +66,6 @@ def upload_file():
             
     return render_template('index.html', extracted=extracted)
 
-
-@app.route('/predict', methods=["GET", "POST"])
-def predict():
-    # Not yet implement
-    clicked=None
-    if request.method == "POST":
-        clicked = request.json['file']
-    return render_template('index.html')
-
-
 @app.route('/uploads/<filename>')
 def upload(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
@@ -75,7 +73,11 @@ def upload(filename):
 
 def extract_metadata(pdffile_path):
     
-    #TODO: get actual data from model from pdf features:
+    # Get vision output
+    image_output = pubmex.alt_predict(pdffile_path) 
+
+    #TODO      add text processing here 
+    #:         [Low priority] make it pararel with text model (might use multitreading)
         
     #load model
     #model = pickle.load(open('model.pkl', 'rb'))
