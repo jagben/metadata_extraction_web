@@ -3,7 +3,7 @@ from flask import Flask, render_template, flash, request, redirect, url_for, sen
 from werkzeug.utils import secure_filename
 from pdf2image import convert_from_path, convert_from_bytes
 from pubmex.pubmexinference import PubMexInference
-
+from cermine.main import CermineTextExtractor
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf', 'PDF'}
@@ -18,6 +18,8 @@ pubmex = PubMexInference(
     config_file='pubmex/configs/train_config.yaml',
     use_cuda=False,
     )
+# Initialize Cermine
+textExtractor = CermineTextExtractor()
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -60,7 +62,7 @@ def upload_file():
             
             #return redirect(url_for('download_file', name=filename))
             
-    
+    textExtractor.cermine_extract('uploads',True, True)
     extracted = extract_metadata(filepath)
     extracted['preview'] = imagepath
             
@@ -74,7 +76,7 @@ def upload(filename):
 def extract_metadata(pdffile_path):
     
     # Get vision output
-    image_output = pubmex.alt_predict(pdffile_path) 
+    # image_output = pubmex.alt_predict(pdffile_path) 
 
     #TODO      add text processing here 
     #:         [Low priority] make it pararel with text model (might use multitreading)
