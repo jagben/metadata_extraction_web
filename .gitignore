@@ -126,6 +126,15 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
-.pyre/
+pyre/
 pubmex/vision_model/model_final.pth
 pubmex/vision_model/model_final.pth:Zone.Identifier
+pubmex/vision_model/model_final.pth
+.git/objects/d2/ecd3494e32908fa5d4048b1c522bcdcf7beb71
+de.model/token_embedder.pkl
+de.model/encoder.pkl
+pubmex/vision_model/model_final.pth
+.git/objects/d2/ecd3494e32908fa5d4048b1c522bcdcf7beb71
+.git/objects/ff/3117851e884c451bf6c929b738403cc7697239
+de.model/token_embedder.pkl
+de.model/encoder.pkl
