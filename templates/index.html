@@ -4,7 +4,7 @@
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Demo</title>
+<title>Metadata extraction</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -61,100 +61,118 @@
     </div>
     <div class="col-sm-8">
         <!--<div class="demo-content bg-alt">.col-xs-8</div> -->
-        
-        <form>
-    	    <div class="form-group row">
-            		<label for="author" class="col-sm-2 col-form-label">Author</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-            		    <input type="text" class="form-control" id="author" value="{{extracted["author"]}}" readonly>
-            		    {% else %}
-                    <input type="text" class="form-control" id="author" value="" readonly>            		    
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="title" class="col-sm-2 col-form-label">Title</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-            		    <input type="text" class="form-control" id="title" value="{{extracted["title"]}}" readonly>
-            		    {% else %}
-            		    <input type="text" class="form-control" id="title" value="" readonly>
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="affiliation" class="col-sm-2 col-form-label">Affiliation</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-            		    <input type="text" class="form-control" id="affiliation" value="{{extracted["affiliation"]}}" readonly>
-            		    {% else %}
-            		    <input type="text" class="form-control" id="affiliation" value="" readonly>
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="date" class="col-sm-2 col-form-label">Date</label>
-                	<div class="col-sm-10">
-                    	{% if extracted %}
-            		    <input type="text" class="form-control" id="date" value="{{extracted["date"]}}" readonly>
-            		    {% else %}
-                    <input type="text" class="form-control" id="date" value="" readonly>            		    
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="journal" class="col-sm-2 col-form-label">Journal</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-            		    <input type="text" class="form-control" id="journal" value="{{extracted["journal"]}}" readonly>
-            		    {% else %}
-            		    <input type="text" class="form-control" id="journal" value="" readonly>
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="address" class="col-sm-2 col-form-label">Address</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-            		    <input type="text" class="form-control" id="address" value="{{extracted["address"]}}" readonly>
-            		    {% else %}
-            		    <input type="text" class="form-control" id="address" value="" readonly>
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="Abstract" class="col-sm-2 col-form-label">Abstract</label>
-    			<div class="col-sm-10">
-            			{% if extracted %}
-            		    <textarea class="form-control" id="abstract" rows="3" readonly>{{extracted["abstract"]}}</textarea>
-            		    {% else %}
-            		    <textarea class="form-control" id="abstract" rows="3" readonly></textarea>
-            		    {% endif %}
-            		</div> 
-    	    </div>
-        	    <div class="form-group row">
-            		<label for="doi" class="col-sm-2 col-form-label">DOI</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-                		<input type="text" class="form-control" id="doi" value="{{extracted["doi"]}}" readonly>
-            		    {% else %}
-                    <input type="text" class="form-control" id="doi" value="" readonly>            		    
-            		    {% endif %}
-            		</div>
-    	    </div>
-    	    <div class="form-group row">
-            		<label for="email" class="col-sm-2 col-form-label">E-mail</label>
-            		<div class="col-sm-10">
-                		{% if extracted %}
-            		    <input type="text" class="form-control" id="email" value="{{extracted["email"]}}" readonly>
-            		    {% else %}
-                    <input type="text" class="form-control" id="email" value="" readonly>            		    
-            		    {% endif %}
-            		</div>
-            	</div>
-    	</form>    
-
+        <div class="tab">
+			<button class="tablinks" id="defaultTab" onclick="openCity(event, 'Text')">Text</button>
+			<button class="tablinks" onclick="openCity(event, 'JSON')">JSON</button>
+		</div>
+		<div id="Text" class="tabcontent">
+			<form>
+				<div class="form-group row">
+						<label for="author" class="col-sm-2 col-form-label">Author</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="author" value="{{extracted["author"]}}" readonly>
+							{% else %}
+						<input type="text" class="form-control" id="author" value="" readonly>            		    
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="title" class="col-sm-2 col-form-label">Title</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="title" value="{{extracted["title"]}}" readonly>
+							{% else %}
+							<input type="text" class="form-control" id="title" value="" readonly>
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="affiliation" class="col-sm-2 col-form-label">Affiliation</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="affiliation" value="{{extracted["affiliation"]}}" readonly>
+							{% else %}
+							<input type="text" class="form-control" id="affiliation" value="" readonly>
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="date" class="col-sm-2 col-form-label">Date</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="date" value="{{extracted["date"]}}" readonly>
+							{% else %}
+						<input type="text" class="form-control" id="date" value="" readonly>            		    
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="journal" class="col-sm-2 col-form-label">Journal</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="journal" value="{{extracted["journal"]}}" readonly>
+							{% else %}
+							<input type="text" class="form-control" id="journal" value="" readonly>
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="address" class="col-sm-2 col-form-label">Address</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="address" value="{{extracted["address"]}}" readonly>
+							{% else %}
+							<input type="text" class="form-control" id="address" value="" readonly>
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="Abstract" class="col-sm-2 col-form-label">Abstract</label>
+					<div class="col-sm-10">
+							{% if extracted %}
+							<textarea class="form-control" id="abstract" rows="3" readonly>{{extracted["abstract"]}}</textarea>
+							{% else %}
+							<textarea class="form-control" id="abstract" rows="3" readonly></textarea>
+							{% endif %}
+						</div> 
+				</div>
+					<div class="form-group row">
+						<label for="doi" class="col-sm-2 col-form-label">DOI</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="doi" value="{{extracted["doi"]}}" readonly>
+							{% else %}
+						<input type="text" class="form-control" id="doi" value="" readonly>            		    
+							{% endif %}
+						</div>
+				</div>
+				<div class="form-group row">
+						<label for="email" class="col-sm-2 col-form-label">E-mail</label>
+						<div class="col-sm-10">
+							{% if extracted %}
+							<input type="text" class="form-control" id="email" value="{{extracted["email"]}}" readonly>
+							{% else %}
+						<input type="text" class="form-control" id="email" value="" readonly>            		    
+							{% endif %}
+						</div>
+					</div>
+			</form>    
+		</div>
+		<div id="JSON" class="tabcontent">
+			<form>
+				<div class="form-group row">
+					<label for="json-text" class="col-sm-2 col-form-label">Metadata</label>
+				<div class="col-sm-10">
+						{% if extracted %}
+						<textarea class="form-control" id="json-text" rows="20" readonly>{{extracted}}</textarea>
+						{% else %}
+						<textarea class="form-control" id="json-text" rows="20" readonly></textarea>
+						{% endif %}
+					</div> 
+			</div>
+			</form>
+		</div>
     </div>
   </div> <!--row close -->
   

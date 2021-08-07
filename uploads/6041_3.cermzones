@@ -1,0 +1,70 @@
+<document>
+  <zone label="MET_BIB_INFO">Frank Manola, Sandra Heiler</zone>
+  <zone label="MET_TITLE">A RISC Object Model for Object System
+Interoperation: Concepts and Applications.</zone>
+  <zone label="MET_ABSTRACT">Das GESIS-IZ Sozialwissenschaften hat im Auftrag des Wissenschaftsrates von August 2006 bis
+April 2007 den publikationsbezogenen Bereich des Forschungsratings Soziologie durchgeführt.
+Dieses Forschungsrating dient als Pilotprojekt für die Leistungsbewertung der universitären
+und außeruniversitären Wissenschaft in der Bundesrepublik. Bei der Darlegung der
+konzeptionellen und technischen Umsetzung der Pilotstudie stehen drei Schritte im Fokus: die
+Bestimmung der Datengrundlage, die Verfahren der Publikationsrecherche und -validierung
+zur Erzeugung der Vorlagemenge durch GESIS-IZ, die Bearbeitung der neugemeldeten
+Publikationen und die Zusammenführung und Auswertung der Daten nach Maßgabe des
+Wissenschaftsrats. Die von GESIS-IZ entwickelte und implementierte Technologie des OnlineErfassungssystems
+wird in ihren Elementen und ihrer Funktion vorgestellt. Es werden die
+Anfragen und Anregungen ausgewertet, die während der Selbstmelde-Phase über die E-MailHotline
+eingingen. Hieran schließt sich eine detaillierte Betrachtung der Nichtmelder an derjenigen
+Personen, die sich nicht im Online-System angemeldet, ihre persönliche Seite weder
+angesehen, korrigiert noch ergänzt haben. Diese Gruppe ist auf Grundlage der vom
+Wissenschaftsrat gemeldeten Daten und weiterer Recherchen nach folgenden Kriterien
+genauer betrachtet worden: Verteilung nach akademischem Abschluss und Statusgruppe, nach
+Disziplinen und nach Alterskohorten. Fragen nach den Gründen für die Teilnahme oder
+Nichtteilnahme an der Pilotstudie können auf dieses Material zurückgreifen. In einer
+ergänzenden Stichprobenanalyse wird die SOLIS/CSA-Vorlage gegen elf weitere Datenbanken
+(u.a. Social SciSearch) und Kataloge (u.a. Dreiländerkatalog des HBZ) geprüft. Die
+differenzierte Betrachtung der nachgemeldeten Publikationen - aufgeschlüsselt nach
+Erscheinungsort und Dokumenttypen und mit Perspektive auf die Diversifizierung
+sozialwissenschaftlicher Publikationen - erlaubt Hinweise darauf, wie der Deckungsgrad des
+Nachweises sozialwissenschaftlicher Publikationen effizient optimiert werden kann. Ein
+abschließendes Kapitel fasst die Ergebnisse zusammen und systematisiert die
+Schlussfolgerungen mit Blick auf den Ausbau der GESIS-IZ-Informationsdienste. (ICF2)</zone>
+  <zone label="BODY_CONTENT">1. Einleitung
+Bereits seit den 1980er Jahren problematisieren
+sozialwissenschaftliche Geschlechter-forscherinnen
+und Gleichstellungspolitikerinnen Teilzeitarbeit als
+hoch ambivalente Strategie für Frauen zur
+Vereinbarkeit von Familie und Beruf: Kritisiert werden
+mangelnde Existenzsicherung, fehlendes Prestige und
+die geschlechterhierarchisierende vertikale und horizontale
+Arbeitsmarktsegregation (Jurczyk/ Kudera
+1991; Kurz-Scherf 1993, 1995; Floßmann/Hauder
+1998; Altendorfer 1999; Tálos 1999). In
+wohlfahrtsstaatlichen Arbeiten wird kritisch
+hervorgehoben, dass Ideologie und Praxis von
+Teilzeitarbeit, die als „Zuverdienst“ von Ehefrauen und
+Müttern zum männlichen Familieneinkommen
+konstruiert werden, das male- breadwinner-Modell
+(Sainsbury 1999) selbst dann noch stützen, wenn dieses
+angesichts hoher struktureller Erwerbslosigkeit und der
+dfdf
+Flexibilisierung der Arbeitsverhältnisse bereits erodiert
+ist. Als frauenpolitisch intendiertes Instrument wird
+schließlich Teilzeitarbeit als verkürzte
+„Bedürfnisinterpretation“ (Fraser 1994) identifiziert:
+Die Arbeitszeitreduktion von Frauen wird als
+Vereinbarung von Familie und Beruf, nicht aber von
+Familie und Karriere gedacht und realisiert.
+Aus der Sicht von PolitikerInnen, Führungskräften
+und SozialwissenschafterInnen verlangen
+hochqualifizierte Funktionen und leitende Positionen,
+d.h. Arbeitsplätze, die mit Macht, Geld und
+gesellschaftlichem Ansehen ausgestattet sind,
+ungeteilten Einsatz, Anwesenheit und Loyalität.
+Leitbilder von Führung enthalten die Prämisse der
+„Rund-um-die-Uhr-Verfügbarkeit“ im Sinne eines weit
+über die Normalarbeitszeit hinausgehenden zeitlichen
+Engage-ments (Burla et al. 1994; Kieser et al. 1995).
+Demgegenüber gibt es aber empirische Evidenzen
+dafür, dass Leitungsfunktionen im Rahmen verkürzter</zone>
+  <zone label="GEN_OTHER">403</zone>
+</document>

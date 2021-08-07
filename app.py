@@ -30,9 +30,11 @@ torch.manual_seed(10)
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 device = 'cpu'
+file_name = ""
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf', 'PDF'}
+
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -249,7 +251,6 @@ def extract_metadata(pdffile_path):
             combined_out.append([word_string, word_vector, word[1].numpy()])
             clone_nlp_out = np.delete(clone_nlp_out, match_indexes[0][0], axis=0)
 
-    print("#####################################")
 
     words = np.array(combined_out)[:, 0]
     vectors = np.array(combined_out)[:, 1:]
@@ -259,7 +260,6 @@ def extract_metadata(pdffile_path):
         n_vectors.append(np.concatenate((w[0], w[1])))
 
     v = torch.from_numpy(np.array(n_vectors, dtype=np.float64)).view(-1, 1, 20).float().to("cpu")
-    print("((((((((((((((((((((((((")
     extracted = step5(v, i_l)
 
     filelist = glob.glob('./tokens/*')
